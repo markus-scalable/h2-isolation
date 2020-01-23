@@ -36,7 +36,7 @@ public class DemoApplication {
         private Bananas bananas;
 
         @Transactional(isolation = Isolation.SERIALIZABLE)
-        @Retryable(maxAttempts = 40)
+        @Retryable(maxAttempts = 100)
         public boolean createOnce(int id) {
             if (bananas.existsById(id)) {
                 return false;

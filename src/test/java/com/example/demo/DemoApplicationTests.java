@@ -67,7 +67,7 @@ public class DemoApplicationTests {
 
         try {
             executor.shutdown();
-            executor.awaitTermination(1, TimeUnit.MINUTES);
+            executor.awaitTermination(5, TimeUnit.MINUTES);
         } catch (InterruptedException e) {
             fail(e.getMessage());
         }
