@@ -1,7 +1,6 @@
 package com.example.demo;
 
 import static org.junit.Assert.fail;
-import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 import java.util.concurrent.CountDownLatch;
@@ -43,7 +42,6 @@ public class DemoApplicationTests {
         runConcurrently(concurrency, () -> birthService.deliver(id));
 
         verify(radio).broadcastBirth(id);
-        verify(radio, times(concurrency)).broadcastAlways(id);
     }
 
     private void runConcurrently(int concurrency, Runnable task) {

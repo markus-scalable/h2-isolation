@@ -48,7 +48,6 @@ public class DemoApplication {
     }
 
     public interface BananaRadioStation {
-        void broadcastAlways(int id);
         void broadcastBirth(int id);
     }
 
@@ -65,7 +64,6 @@ public class DemoApplication {
             if (factory.createOnce(id)) {
                 radio.broadcastBirth(id);
             }
-            radio.broadcastAlways(id);
         }
     }
 
